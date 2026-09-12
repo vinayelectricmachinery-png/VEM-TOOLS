@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f3c84b"><meta name="description" content="VEM Workshop Toolbox - Vinay Electric Machinery">
+<link rel="icon" href="assets/vem-icon.svg" type="image/svg+xml"><link rel="apple-touch-icon" href="assets/vem-icon-192.png">
+<link rel="manifest" href="manifest.webmanifest"><link rel="stylesheet" href="style.css"><title>VEM Workshop Toolbox</title>
+</head>
+<body><main class="app">
+<header class="topbar"><div class="brand"><img class="logo-img" src="assets/vem-logo.svg" alt="VEM"><div><div class="brand-name">VINAY ELECTRIC<br>MACHINERY</div><div class="byline">by Vinay Dagriya</div></div></div><button class="icon-btn" aria-label="Menu" onclick="toggleMenu()">☰</button></header>
+<section class="hero">
+  <div class="hero-copy">
+    <span class="eyebrow">WORKSHOP TOOLBOX</span>
+    <h1>Tools that make<br>work faster.</h1>
+    <p>Calculators & quick references for electrical and mechanical work.</p>
+  </div>
+  <div class="hero-art" aria-label="Vinay Electric Machinery logo">
+    <img class="hero-logo" src="assets/vem-icon.svg" alt="VINAY ELECTRIC MACHINERY VEM logo">
+  </div>
+</section>
+<section class="quick-row"><button class="quick-card active" onclick="openTool('swg')"><span>⚡</span><b>SWG</b><small>Wire weight</small></button><button class="quick-card" onclick="openTool('convert')"><span>📏</span><b>MM ↔ IN</b><small>Converter</small></button><button class="quick-card" onclick="openTool('bearing')"><span>⚙️</span><b>BEARING</b><small>Find number</small></button></section>
+<div class="section-head"><div><span class="eyebrow dark">ALL TOOLS</span><h2>Workshop tools</h2></div><button class="see-all" onclick="filterTools('all')">See all</button></div>
+<section class="tool-grid" id="toolGrid">
+<button class="tool-card yellow" data-tool="swg" onclick="openTool('swg')"><div class="tool-icon">⚡</div><h3>SWG Calculator</h3><p>Calculate wire weight by SWG combination.</p><span class="arrow">↗</span></button>
+<button class="tool-card cream" data-tool="convert" onclick="openTool('convert')"><div class="tool-icon">↔</div><h3>MM ↔ Inch</h3><p>Fast metric and imperial conversion.</p><span class="arrow">↗</span></button>
+<button class="tool-card dark" data-tool="bearing" onclick="openTool('bearing')"><div class="tool-icon">⚙</div><h3>Bearing Finder</h3><p>Find likely bearing number from ID, OD & width.</p><span class="arrow">↗</span></button>
+<button class="tool-card orange" data-tool="tap" onclick="openTool('tap')"><div class="tool-icon">🔩</div><h3>Tap Drill Size</h3><p>Enter a thread and get the recommended drill.</p><span class="arrow">↗</span></button>
+<button class="tool-card cream" data-tool="thread" onclick="openTool('thread')"><div class="tool-icon">🧵</div><h3>Thread / TPI</h3><p>Convert thread pitch between mm and TPI.</p><span class="arrow">↗</span></button>
+<button class="tool-card yellow" data-tool="weight" onclick="openTool('weight')"><div class="tool-icon">⚖</div><h3>Material Weight</h3><p>Quick weight estimate for common materials.</p><span class="arrow">↗</span></button>
+</section>
+<section class="contact-card"><div><span class="eyebrow">VINAY ELECTRIC MACHINERY</span><h2>Need a workshop tool?</h2><p>More calculators can be added to VEM Toolbox.</p></div><a href="tel:7073547732">Call<br><strong>7073547732</strong></a></section>
+<footer>VEM • Vinay Electric Machinery • by Vinay Dagriya</footer></main>
+<div class="drawer" id="drawer"><div class="drawer-panel"><button class="close" onclick="toggleMenu()">×</button><img class="logo-img big-logo" src="assets/vem-logo.svg" alt="VEM"><h2>VEM Toolbox</h2><p>Choose a workshop tool.</p><button onclick="openTool('swg');toggleMenu()">⚡ SWG Calculator</button><button onclick="openTool('convert');toggleMenu()">📏 MM ↔ Inch</button><button onclick="openTool('bearing');toggleMenu()">⚙️ Bearing Finder</button><button onclick="openTool('tap');toggleMenu()">🔩 Tap Drill Size</button><button onclick="openTool('thread');toggleMenu()">🧵 Thread / TPI</button><button onclick="openTool('weight');toggleMenu()">⚖ Material Weight</button></div></div>
+<div class="modal" id="modal"><div class="modal-box"><button class="close" onclick="closeTool()">×</button><div id="toolContent"></div></div></div>
+<script src="script.js"></script><script>if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{})}</script>
+</body></html>
